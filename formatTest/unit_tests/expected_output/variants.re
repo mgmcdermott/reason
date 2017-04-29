@@ -117,6 +117,11 @@ let accessDeeplyWithArg x =>
   | _ => 0
   };
 
+type variantWithAttribute = [
+  | `VariantWithAttribute of unit -> unit [@bs]
+  | `VariantWithoutAttribute of unit -> unit
+];
+
 /* In OCaml's syntax, to capture the wrapped data, you do:
  *
  *   let myFunc x = function | `Blah (p as retVal) -> retVal`
